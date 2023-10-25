@@ -1,0 +1,7 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <block class="vendor1\mod1\Block\Message" name="global_message" template="vendor1_mod1::global_message.phtml" before="-"/>
+        </referenceContainer>
+    </body>
+</page>

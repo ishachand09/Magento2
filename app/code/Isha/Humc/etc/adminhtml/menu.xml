@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Isha_Humc::custom_menu" title="Custom Menu" module="Isha_Humc" sortOrder="200" resource="Isha_Humc::custom_menu" />
+        <add id="Isha_Humc::custom_submenu" title="Custom Submenu" module="Isha_Humc" sortOrder="10" parent="Isha_Humc::custom_menu" action="humc/index/index" resource="Isha_Humc::custom_submenu"/>
+    </menu>
+</config>

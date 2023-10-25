@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+ 
+ <event name="catalog_controller_product_view">
+     <observer name="log_product_view" instance="vendor1\mod1\Observer\LogProductView" />
+ </event>
+ 
+ <event name="controller_action_predispatch">
+    <observer name="log_page_load" instance="vendor1\mod1\Observer\LogPageLoad" />
+ </event>
+ 
+ <event name="controller_front_send_response_before">
+        <observer name="log_available_routers" instance="vendor1\mod1\Observer\LogAvailableRouters" />
+ </event>
+
+  <event name="checkout_cart_product_add_after">
+        <observer name="log_cart_product" instance="vendor1\mod1\Observer\LogCartProduct" />
+    </event>
+
+</config>
+

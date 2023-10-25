@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+
+        <tab id="mod9" translate="label" sortOrder="600">
+            <label>Mod9</label>
+        </tab>
+
+        <section id="general1" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        
+            <label>General</label>
+            <tab>mod9</tab>
+
+            <resource>Isha_Us9::config_mod9</resource>
+
+            <group id="custom_configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Custom Configuration</label>
+
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="text_to_display" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text to Display</label>
+                </field>
+
+            </group>
+
+        </section>
+
+        <section id="general2" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+        
+            <label>Catalog</label>
+            <tab>mod9</tab>
+
+            <resource>Isha_Us9::config_mod9</resource>
+
+            <group id="custom_configuration2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Custom Configuration</label>
+
+                <field id="enable2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="enable3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable 2 </label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="text_to_display2" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text to Display</label>
+                </field>
+
+            </group>
+
+        </section>
+
+        <section id="general3" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        
+            <label>Product disable</label>
+            <tab>mod9</tab>
+
+            <resource>Isha_Us9::config_mod9</resource>
+
+            <group id="custom_configuration3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Product disable</label>
+
+                <field id="enable4" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Diable Black Hoodie Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+
+        </section>
+
+
+    </system>
+
+</config>

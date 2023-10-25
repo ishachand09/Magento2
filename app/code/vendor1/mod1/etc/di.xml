@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- <preference for="\Magento\Catalog\Api\Data\CategoryInterface" type="vendor1\mod1\Api\Data\CustomCategoryInterface"/> -->
+
+    <type name="Magento\Theme\Block\Html\Footer">
+      <plugin name="footer" type="vendor1\mod1\Plugin\Footer" />
+    </type>
+
+    <type name="Magento\Theme\Block\Html\Header">
+        <plugin name="custom_welcome_message" type="vendor1\mod1\Plugin\CustomWelcomeMessagePlugin" sortOrder="10"/>
+    </type>
+
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="custom_product_label" type="vendor1\mod1\Plugin\ProductPlugin" />
+    </type>
+
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="custom_breadcrumbs" type="vendor1\mod1\Plugin\CustomBreadcrumbsPlugin" sortOrder="10"/>
+    </type>
+
+    <type name="Magento\Framework\App\RouterList">
+        <arguments>
+            <argument name="routerList" xsi:type="array">
+                <item name="customRoute" xsi:type="array">
+                    <item name="class" xsi:type="string">vendor1\mod1\Controller\Router</item>
+                    <item name="disable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">40</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Catalog\Block\Product\View">
+        <plugin name="catalog_product_view_plugin" type="vendor1\mod1\Plugin\CatalogProductViewPlugin" sortOrder="10" disabled="false" />
+    </type>
+
+    <type name="Magento\Catalog\Block\Product\View\Description">
+        <plugin name="custom_description_plugin" type="vendor1\mod1\Plugin\DescriptionPlugin" sortOrder="10" disabled="false" />
+    </type>
+
+    <type name="Magento\Framework\App\Router\NoRouteHandlerList">
+        <arguments>
+            <argument name="handlerClassesList" xsi:type="array">
+                <item name="extension" xsi:type="array">
+                    <item name="class" xsi:type="string">vendor1\mod1\App\Router\NoRouteHandler</item>
+                    <item name="sortOrder" xsi:type="string">80</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

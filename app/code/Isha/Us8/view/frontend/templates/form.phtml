@@ -1,0 +1,47 @@
+<h1>Enter Details-</h1>
+
+
+<form method="post" action="<?php echo $block->getFormAction(); ?>" data-mage-init='{"validation":{}}'>
+    <input type="text" name="first_name" id="fname" placeholder="First Name" letters-only='true'>
+    <input type="text" name="last_name" id="lname" placeholder="Last Name" letters-only='true'>
+    <input type="text" name="email_id" id="mail" placeholder="Email ID" validate-email='true'>
+    <input type="text" name="address" placeholder="Address" alphanumeric='true'>
+    <button type="submit" id="submit">Save</button>
+</form>
+
+<?php
+if(isset($_POST['submit']))
+{
+ echo "hi";
+
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+$to = $_POST['mail'];
+$nameTo = $_POST['fname'] . $_POST['lname'];
+
+$from = "isha.chand@hbwsl.com";
+
+$email_subject = "Confirmation Mail";
+$body ="<table cellpadding='4' cellspacing='0' style='border-collapse:collapse' width='500' border='1'>";
+$body.="<tr><td align='left' colspan='2' style='background:#CCC;'><strong>Confirmation</strong></td></tr>";
+$body.="<tr><td width='150' align='left'>Name</td><td align='left'>".$_POST['fname']."</td></tr>";
+$body.="<tr><td width='150' align='left'>Email</td><td align='left'>".$_POST['mail']."<br /></td></tr>"; 
+$body.="</table>";
+
+$headers = 'From: '.$from."\r\n".
+'Reply-To: '.$from."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+@mail($to, $email_subject, $body, $headers);
+
+// $transport = $objectManager->create('Magento\Framework\Mail\Template\TransportBuilder'); 
+// $data = $transport
+//     ->setTemplateIdentifier(7)
+//     ->setTemplateOptions(['area' => \Magento\Framework\App\Area::AREA_FRONTEND, 'store' => 1])
+//     ->setFrom(['name' => 'Test','email' => 'test1@gmail.com'])
+//     ->addTo($to,$nameTo)
+//     ->getTransport();
+// $data->sendMessage();
+
+
+
+}
+?>
